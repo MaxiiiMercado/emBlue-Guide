@@ -1,98 +1,107 @@
 <a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 
 <header class="header">
-  <div class="logo">
-    {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
-      {{#if settings.show_brand_name}}
+    <div class="logo">
+        {{#link 'help_center'}}
+        <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
+        {{!--
+        {{#if settings.show_brand_name}}
         <span aria-hidden="true">{{help_center.name}}</span>
-      {{/if}}
-    {{/link}}
-  </div>
+        {{/if}}
+        --}}
+        {{/link}}
+    </div>
 
-  <div class="nav-wrapper-desktop">
-    <nav class="user-nav" id="user-nav">
-      <ul class="user-nav-list">
-        <li>{{link 'community'}}</li>
-        <li>{{link 'new_request' class='submit-a-request'}}</li>
-        {{#unless signed_in}}
-          <li>
-            {{#link "sign_in" class="sign-in"}}
-              {{t 'sign_in'}}
-            {{/link}}
-          </li>
-        {{/unless}}
-      </ul>
-    </nav>
-    {{#if signed_in}}
-      <div class="user-info dropdown">
-        <button class="dropdown-toggle" aria-haspopup="true">
-          {{user_avatar class="user-avatar"}}
-          <span>
-            {{user_name}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-          </span>
-        </button>
-        <div class="dropdown-menu" role="menu">
-          {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
-          {{link "requests" role="menuitem"}}
-          {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
-          {{contact_details role="menuitem"}}
-          {{change_password role="menuitem"}}
-          <div class="separator" role="separator"></div>
-          {{link "sign_out" role="menuitem"}}
+    <div class="search-container">
+        <svg class="search-icon" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M14.2059 13.8007L13.9742 14.1306L14.2475 14.4271L17.7627 18.239L16.8189 19.2624L13.3588 15.5101L13.0378 15.1621L12.6728 15.4636C11.3611 16.5471 9.76089 17.1233 8.12361 17.1101V17.11L8.11621 17.1101C7.12022 17.1168 6.13184 16.9091 5.20796 16.4977C4.28395 16.0863 3.44164 15.4788 2.73109 14.7082C2.02045 13.9376 1.456 13.0194 1.07233 12.0061C0.688634 10.9927 0.493872 9.90551 0.500147 8.80799H0.50018L0.500147 8.80227C0.493872 7.70474 0.688634 6.61758 1.07233 5.60418C1.456 4.59081 2.02045 3.67266 2.73109 2.90202C3.44164 2.13147 4.28395 1.52397 5.20796 1.11255C6.13184 0.701186 7.12022 0.49346 8.11621 0.500157V0.500202L8.12293 0.500157C9.11891 0.49346 10.1073 0.701186 11.0312 1.11255C11.9552 1.52397 12.7975 2.13147 13.5081 2.90202C14.2187 3.67266 14.7831 4.59081 15.1668 5.60418C15.5505 6.61758 15.7453 7.70474 15.739 8.80227L15.7389 8.80227L15.739 8.80856C15.7514 10.6151 15.2102 12.371 14.2059 13.8007ZM2.27806 6.2124C1.96783 7.03616 1.81239 7.91742 1.81997 8.80513C1.81239 9.69283 1.96783 10.5741 2.27806 11.3979C2.58884 12.2231 3.04923 12.9753 3.63414 13.6096L4.00171 13.2707L3.63414 13.6096C4.21914 14.244 4.91722 14.7479 5.68874 15.0896C6.45873 15.4306 7.28521 15.6026 8.11957 15.5944C8.95393 15.6026 9.78041 15.4306 10.5504 15.0896C11.3219 14.7479 12.02 14.244 12.605 13.6096C13.1899 12.9753 13.6503 12.2231 13.9611 11.3979C14.2713 10.5741 14.4267 9.69283 14.4192 8.80513C14.4267 7.91743 14.2713 7.03616 13.9611 6.2124C13.6503 5.38719 13.1899 4.63494 12.605 4.00064C12.02 3.36625 11.3219 2.86235 10.5504 2.52066C9.78041 2.17964 8.95393 2.00762 8.11957 2.01584C7.28521 2.00762 6.45873 2.17964 5.68874 2.52066C4.91722 2.86235 4.21914 3.36625 3.63414 4.00064C3.04923 4.63494 2.58884 5.38719 2.27806 6.2124Z"
+                fill="currentColor" stroke="currentColor" />
+        </svg>
+        {{search submit=false class='search search-full'}}
+    </div>
+
+    <div class="nav-wrapper-desktop">
+        <nav class="user-nav" id="user-nav">
+            <ul class="user-nav-list">
+                <li class="header-link"><a href="https://blog.embluemail.com/">Blog</a></li>
+                {{!--
+                <li>{{link 'new_request' class='submit-a-request'}}</li>
+                --}}
+                {{#unless signed_in}}
+                <li>
+                    {{#link "sign_in" class="sign-in"}}
+                    {{t 'sign_in'}}
+                    {{/link}}
+                </li>
+                {{/unless}}
+            </ul>
+        </nav>
+        {{#if signed_in}}
+        <div class="user-info dropdown">
+            <button class="dropdown-toggle" aria-haspopup="true">
+                {{user_avatar class="user-avatar"}}
+            </button>
+            <div class="dropdown-menu" role="menu">
+                {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
+                {{link "requests" role="menuitem"}}
+                {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
+                {{contact_details role="menuitem"}}
+                {{change_password role="menuitem"}}
+                <div class="separator" role="separator"></div>
+                {{link "sign_out" role="menuitem"}}
+            </div>
         </div>
-      </div>
-    {{/if}}
-  </div>
+        {{/if}}
+    </div>
 
-  <div class="nav-wrapper-mobile">
-    <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      {{#if signed_in}}
-        {{user_avatar class="user-avatar"}}
-      {{/if}}
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
-      </svg>
-    </button>
-    <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
-      <ul class="menu-list-mobile-items">
-        {{#if signed_in}}
-          <li class="user-avatar-item item">
-            {{#my_profile role="menuitem" class="my-profile"}}
-              {{user_avatar class="menu-profile-avatar"}}
-              <div class="menu-profile-name">
-                <div>{{user_name}}</div>
-                <div class="my-profile-tooltip">{{t 'profile'}}</div>
-              </div>
-            {{/my_profile}}
-          </li>
-          <li class="item">{{link "requests" role="menuitem"}}</li>
-          <li class="item">{{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}</li>
-          <li class="item">{{contact_details role="menuitem"}}</li>
-          <li class="item">{{change_password role="menuitem" class='change-password'}}</li>
-          <li class="nav-divider"></li>
-        {{else}}
-          <li class="item">
-            {{#link "sign_in" role="menuitem"}}
-              {{t 'sign_in'}}
-            {{/link}}
-          </li>
-          <li class="nav-divider"></li>
-        {{/if}}
-        <li class="item">{{link 'community' role="menuitem"}}</li>
-        <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
-        <li class="nav-divider"></li>
-        {{#if signed_in}}
-          <li class="item">
-            {{link "sign_out" role="menuitem"}}
-          </li>
-        {{/if}}
-        </li>
-      </ul>
-    </nav>
-  </div>
+    <div class="nav-wrapper-mobile">
+        <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false"
+            aria-label="{{t 'toggle_navigation'}}">
+            {{#if signed_in}}
+            {{user_avatar class="user-avatar"}}
+            {{/if}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+                class="icon-menu">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13" />
+            </svg>
+        </button>
+        <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
+            <ul class="menu-list-mobile-items">
+                {{#if signed_in}}
+                <li class="user-avatar-item item">
+                    {{#my_profile role="menuitem" class="my-profile"}}
+                    {{user_avatar class="menu-profile-avatar"}}
+                    <div class="menu-profile-name">
+                        <div>{{user_name}}</div>
+                        <div class="my-profile-tooltip">{{t 'profile'}}</div>
+                    </div>
+                    {{/my_profile}}
+                </li>
+                <li class="item">{{link "requests" role="menuitem"}}</li>
+                <li class="item">{{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}</li>
+                <li class="item">{{contact_details role="menuitem"}}</li>
+                <li class="item">{{change_password role="menuitem" class='change-password'}}</li>
+                <li class="nav-divider"></li>
+                {{else}}
+                <li class="item">
+                    {{#link "sign_in" role="menuitem"}}
+                    {{t 'sign_in'}}
+                    {{/link}}
+                </li>
+                <li class="nav-divider"></li>
+                {{/if}}
+                <li class="item">{{link 'community' role="menuitem"}}</li>
+                <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
+                <li class="nav-divider"></li>
+                {{#if signed_in}}
+                <li class="item">
+                    {{link "sign_out" role="menuitem"}}
+                </li>
+                {{/if}}
+                </li>
+            </ul>
+        </nav>
+    </div>
 
 </header>

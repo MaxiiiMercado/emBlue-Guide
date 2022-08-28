@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /***** Normalize.css *****/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -189,7 +190,7 @@ template {
 body {
   background-color: $background_color;
   color: #707071;
-  font-family: $text_font;
+  font-family: 'Asap', sans-serif;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -646,38 +647,32 @@ ul {
 
 /***** Header *****/
 .header {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
   position: relative;
-  align-items: center;
   display: flex;
-  height: 71px;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 50px;
+  height: 90px;
+  background-image: url($assets-header_background-png);
+  background-size: cover;
 }
 
-@media (min-width: 1160px) {
-  .header {
-    padding: 0;
-    width: 90%;
-  }
-}
-
-.logo img {
-  max-height: 37px;
-  vertical-align: middle;
-}
-
-.logo span {
-  margin: 0 10px;
-  color: #4D8BCE;
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 55%;
+  height: 40%;
 }
 
 .logo a {
-  display: inline-block;
+  display: flex;
+  height: 100%;
 }
 
-.logo a:hover, .logo a:focus, .logo a:active {
+.logo a:hover,
+.logo a:focus,
+.logo a:active {
   text-decoration: none;
 }
 
@@ -699,7 +694,7 @@ ul {
   border: solid 1px #ddd;
   right: 0;
   left: 0;
-  top: 71px;
+  top: 90px;
   z-index: 1;
 }
 
@@ -722,8 +717,17 @@ ul {
   list-style: none;
 }
 
-.user-nav-list > li {
+.user-nav-list .header-link {
+  display: none;
+}
+
+.user-nav-list li {
   display: inline-block;
+  margin: 0 30px;
+}
+
+.user-nav-list li a, .user-nav-list li a:hover, .user-nav-list li a:active, .user-nav-list li a:focus {
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -746,11 +750,12 @@ ul {
 
 .nav-wrapper-desktop a {
   border: 0;
-  color: $link_color;
   display: none;
-  font-size: 14px;
   padding: 0 20px 0 0;
   width: auto;
+  font-size: 20px;
+  font-weight: 500;
+  color: #F5F5F5;
 }
 
 @media (min-width: 768px) {
@@ -764,9 +769,7 @@ ul {
 }
 
 .nav-wrapper-desktop a:hover, .nav-wrapper-desktop a:focus, .nav-wrapper-desktop a:active {
-  background-color: transparent;
-  color: $link_color;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {
@@ -803,7 +806,7 @@ ul {
   border-bottom: solid 1px #ddd;
   right: 0;
   left: 0;
-  top: 71px;
+  top: 90px;
   z-index: 2;
 }
 
@@ -974,8 +977,8 @@ ul {
 
 /***** User avatar *****/
 .user-avatar {
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
@@ -1117,7 +1120,7 @@ ul {
   border: none;
   border-radius: 20px;
   background-color: #F5F5F5;
-  font-size: 20px;
+  font-size: 18px;
   color: #707071;
 }
 

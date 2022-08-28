@@ -1,4 +1,6 @@
 /***** Base *****/
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +8,7 @@
 body {
   background-color: $background_color;
   color: $text_color;
-  font-family: $text_font;
+  font-family: 'Asap', sans-serif;
   font-size: $font-size-base;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
