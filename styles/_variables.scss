@@ -1,4 +1,11 @@
 // Variables
+$brand-color: #4D8BCE;
+$main-blue: #2C4D86;
+$main-orange: #FF9900;
+$text-color: #707071;
+$bg-main: #F5F5F5;
+$bg-block: #FCFCFC;
+$bg-block-hover: #484849;
 
 // Colors
 $hover-button-color: zass-darken($brand_color, 20%);
@@ -29,4 +36,4 @@ $max-width-container: 1160px;
 $font-weight-semibold: 600;
 
 // Transitions
-$input-transition: border .12s ease-in-out;
+$input-transition: border 2s ease-in-out;
