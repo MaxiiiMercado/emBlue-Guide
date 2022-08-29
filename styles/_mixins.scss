@@ -65,7 +65,6 @@
 }
 
 @mixin content-body {
-  @include standalone-link;
 
   img {
     height: auto;
