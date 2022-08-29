@@ -1,91 +1,172 @@
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
+$random1: random(3);
+$random2: random(3);
+$random3: random(3);
+
 .blocks {
-  &-list {
-    @include tablet {
-      margin: 0 -15px;
-    }
-
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 0;
-  }
-
-  &-item {
-    @include tablet {
-      margin: 0 15px 30px;
-    }
-
-    border: 1px solid $brand_color;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: $brand_color;
-    display: flex;
-    flex: 1 0 340px;
-    margin: 0 0 30px;
-    max-width: 100%;
-    text-align: center;
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $brand_color;
-
-      * {
-        color: $brand_text_color;
-        text-decoration: none;
-      }
-    }
-
-    &-internal {
-      background-color: transparent;
-      border: 1px solid $border-color;
-
-      .icon-lock {
-        height: 15px;
-        width: 15px;
-        bottom: 5px;
-        position: relative;
-      }
-
-      a { color: $text_color; }
-    }
-  }
-
-  &-item-link {
-    color: $brand_color;
-    padding: 20px 30px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
     justify-content: center;
-    border-radius: inherit;
 
-    &:visited,
-    &:hover,
-    &:active {
-      color: inherit;
-      text-decoration: none;
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0 5%;
+        width: 90%;
+        list-style: none;
     }
-    
-    &:focus {
-      @include focus-ring;
-      text-decoration: none;
+
+    &-item {
+        box-sizing: border-box;
+        margin: 30px 30px;
+        width: 200px;
+        height: 110px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: $bg-block;
+        box-shadow: 0px 6px 6px rgba(255, 153, 0, 0.4);
+        border: none;
+        border-radius: 6px;
+
+        text-align: center;
+        color: $brand-color;
+        transition: 0.5s;
+
+        svg {
+            height: 50px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $bg-block-hover;
+            color: $text-white;
+
+            svg {
+                color: $bg-block;
+                overflow: visible;
+
+                .animado {
+                    animation-direction: normal;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                }
+
+                .llave {
+                    animation-duration: 2s;
+                    animation-name: animacion-llave;
+                }
+
+                .girar {
+                    animation-duration: 4s;
+                    animation-name: animacion-girar;
+                }
+
+                .agrandar {
+                    animation-duration: 3s;
+                    animation-name: animacion-agrandar;
+                }
+
+                .lupa {
+                    animation-duration: 3s;
+                    animation-name: animacion-lupa;
+                }
+
+                .flecha {
+                    animation-duration: 1.5s;
+                    animation-name: animacion-flecha;
+                }
+
+                .featuresArriba {
+                    animation-name: animacion-featuresAr;
+                }
+
+                .featuresAbajo {
+                    animation-name: animacion-featuresAb;
+                }
+
+                .featuresUno {
+                    animation-duration: 4s;
+                }
+
+                .featuresDos {
+                    animation-duration: 3s;
+                }
+
+                .featuresTres {
+                    animation-duration: 3s;
+                }
+
+                .json {
+                    animation-duration: 3s;
+                    animation-name: animacion-json;
+                }
+
+                .llaveDer {
+                    animation-duration: 3s;
+                    animation-name: animacion-llaveDer;
+                }
+
+                .llaveIzq {
+                    animation-duration: 3s;
+                    animation-name: animacion-llaveIzq;
+                }
+                .flechita {
+                    animation-duration: 4s;
+                    animation-name: animacion-flechita;
+                }
+        
+                .codigo {
+                    animation-duration: 4s;
+                    animation-name: animacion-codigo;
+                }
+            }
+        }
+
+        /*
+        &-internal {
+            background-color: transparent;
+            border: 1px solid $border-color;
+
+            .icon-lock {
+                height: 15px;
+                width: 15px;
+                bottom: 5px;
+                position: relative;
+            }
+
+            a {
+                color: $text_color;
+            }
+        }
+        */
     }
-  }
 
-  &-item-title {
-    margin-bottom: 0;
-    font-size: 16px;
-  }
+    &-item-link {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
 
-  &-item-description {
-    margin: 0;
-  }
+        &:visited,
+        &:hover,
+        &:active {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
 
-  &-item-description:not(:empty) {
-    margin-top: 10px;
-  }
+    &-item-title {
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 16px;
+    }
 }

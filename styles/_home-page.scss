@@ -4,8 +4,15 @@
   @include tablet {
     margin-bottom: 60px;
   }
-
+  margin-top: 25px;
   margin-bottom: 40px;
+
+  .link-novedades{
+    text-align: center;
+    a{
+      color: $main-orange;
+    }
+  }
 }
 
 .home-section h2 {
