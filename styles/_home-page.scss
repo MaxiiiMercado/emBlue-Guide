@@ -4,68 +4,63 @@
   @include tablet {
     margin-bottom: 60px;
   }
+
   margin-top: 25px;
   margin-bottom: 40px;
 
-  .link-novedades{
+  .link-novedades {
     text-align: center;
-    a{
-      color: $main-orange;
+
+    a {
+      color: $brand-color;
     }
   }
 }
 
-.home-section h2 {
-  margin-bottom: 10px;
-  text-align: center;
+
+/***** Home Articles *****/
+.articles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 5%;
 }
 
-/***** Promoted articles *****/
-
-.promoted-articles {
-  @include desktop { flex-direction: row; }
+.article-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin: 20px 0;
 
-  &-item {
-    @include desktop {
-      align-self: flex-end;
-      flex: 0 0 auto;
-      padding-right: 30px;
-      width: 33%; /* Three columns on desktop */
-
-      [dir="rtl"] & { padding: 0 0 0 30px; }
-    }
-
-    flex: 1 0 auto;
-
-    &:nth-child(3n) {
-      padding-right: 0;
-    }
-
-    a {
-      display: block;
-      border-bottom: 1px solid $border-color;
-      padding: 15px 0;
-    }
-
-    .icon-lock {
-      vertical-align: baseline;
-    }
-
-    &:last-child a {
-      @include desktop {
-        border-bottom: 1px solid $border-color;
-      }
-
-      border: 0;
-    }
+  h2 {
+    color: $main-orange;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    margin-bottom: 5px;
   }
 
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+
+    li {
+      margin: 5px;
+
+      a {
+        text-decoration-line: underline;
+        color: $brand-color;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
 }
 
 /***** Community section in homepage *****/
+/*
 .community {
   text-align: center;
 
@@ -86,3 +81,4 @@
   border-top: 1px solid $border-color;
   padding: 30px 0;
 }
+*/
