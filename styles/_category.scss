@@ -1,55 +1,90 @@
 /***** Category pages *****/
 .category {
-  &-container {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &-content {
-    @include desktop {
-      flex: 0 0 80%;
+    &-container {
+        display: flex;
+        justify-content: center;
     }
 
-    flex: 1;
-  }
+    &-content {
+        width: 100%;
+
+        h1 {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 37px;
+            color: $main-orange;
+            margin: 0;
+        }
+    }
 }
 
 .section-tree {
-  @include tablet { flex-direction: row; }
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    @include tablet {
+        flex-direction: row;
+    }
 
-  .section {
-    @include tablet { flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ }
-    flex: initial;
-  }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-  &-title {
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: $font-weight-semibold;
+    .section {
+        @include tablet {
+            flex: 0 0 45%;
+            /* Two columns for tablet and desktop. Leaving 5% separation between columns */
+        }
 
-    a { color: $text_color; }
-  }
+        flex: initial;
+    }
 
-  .see-all-articles {
-    display: block;
-    padding: 15px 0;
-  }
+    .see-all-articles {
+        display: block;
+        padding: 0;
+        margin-left: 30px;
+        color: $text-color;
+        text-decoration: underline;
+    }
 }
 
 .article-list {
-  &-item {
-    font-size: $font-size-bigger;
-    padding: 15px 0;
 
-    a { color: $text_color; }
-  }
+    h2 {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 25px;
+        margin-bottom: 10px;
+
+        a {
+            color: $main-blue;
+        }
+    }
+
+    &-item {
+        padding: 8px 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+
+        a {
+            color: $brand-color;
+        }
+    }
 }
 
 .icon-star {
-  color: $brand_color;
-  font-size: 18px;
+    color: $main-orange;
+    font-size: 18px;
+}
+
+.bg-personaje {
+    position: fixed;
+    top: 100px;
+    right: 10%;
+    z-index: -10;
+
+    img {
+        width: 269px;
+        height: 516px;
+    }
+
 }

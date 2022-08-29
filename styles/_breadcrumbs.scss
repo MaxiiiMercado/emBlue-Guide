@@ -1,27 +1,24 @@
 /***** Breadcrumbs *****/
 .breadcrumbs {
-  @include tablet {
-    margin: 0;
-  }
-
-  margin: 0 0 15px 0;
-  padding: 0;
+  margin: 0;
+  padding: 30px 0;
 
   li {
-    color: $secondary-text-color;
     display: inline;
-    font-size: $font-size-small;
-    max-width: 450px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    + li::before {
-      content: ">";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $brand-color;
+    a{
+      color: $brand-color;
+    }
+    +li::before {
+      content: "/";
       margin: 0 4px;
     }
+  }
 
-    a:visited {
-      color: $link_color;
-    }
+  li:last-child {
+    font-weight: bold;
   }
 }
