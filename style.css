@@ -1933,7 +1933,7 @@ ul {
 
 .bg-personaje {
   position: fixed;
-  top: 100px;
+  bottom: 20px;
   right: 10%;
   z-index: -10;
 }
