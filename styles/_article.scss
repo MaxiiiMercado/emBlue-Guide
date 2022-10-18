@@ -133,7 +133,25 @@
         padding-left: 40px;
         display: flex;
         width: 34%;
-    }
+        flex-direction: column;
+
+        .tags-container{
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            margin-left: 10px;
+            margin-bottom: 30px;
+            p{
+                font-size: 16px;
+                font-weight: 700;
+                color: #2C4D86;
+                margin: 0;
+                span{
+                    font-weight: 500;
+                }
+            }
+        }
+    }   
 
     .sidenav {
         &-title {

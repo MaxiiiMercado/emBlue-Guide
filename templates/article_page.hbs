@@ -82,6 +82,11 @@
 
         </article>
         <aside class="article-sidebar" aria-labelledby="section-articles-title">
+            <section class="tags-container">
+                <p>Tipo:<span id="tags-container-tipo"></span></p>
+                <p>Prioridad: <span id="tags-container-prioridad"></span></p>
+                <p>Tag: <span id="tags-container-tag"></span></p>
+            </section>
             {{#if settings.show_articles_in_section}}
             <div class="collapsible-sidebar">
                 <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title"
@@ -118,3 +123,12 @@
         </aside>
     </div>
 </div>
+
+<script>
+    const tagsElement = document.getElementsByClassName('tags')[0];
+    const array = tagsElement.firstChild.innerHTML.split('-')
+    tagsElement.remove()
+    document.getElementById('tags-container-tipo').innerHTML = array[0].slice(5);
+    document.getElementById('tags-container-prioridad').innerHTML = array[1].slice(11);
+    document.getElementById('tags-container-tag').innerHTML = array[2].slice(5);
+</script>

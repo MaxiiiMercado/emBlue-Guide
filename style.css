@@ -2236,6 +2236,26 @@ ul {
   padding-left: 40px;
   display: flex;
   width: 34%;
+  flex-direction: column;
+}
+
+.article-sidebar .tags-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.article-sidebar .tags-container p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C4D86;
+  margin: 0;
+}
+
+.article-sidebar .tags-container p span {
+  font-weight: 500;
 }
 
 .article .sidenav-title {
@@ -3479,6 +3499,8 @@ ul {
   line-height: 25px;
   text-align: center;
   color: #4D8BCE;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CCC;
 }
 
 .collapsible-sidebar-toggle {
