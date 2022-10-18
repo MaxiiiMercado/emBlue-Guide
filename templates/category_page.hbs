@@ -7,10 +7,16 @@
             <div id="main-content" class="section-tree">
                 {{#each sections}}
                 <section class="section">
-                    {{#if articles}}
                     <div class="article-list">
                         <h2><a href="{{url}}">{{name}}</a></h2>
                         <ul>
+                            {{#each sections}}
+                            <li class="article-list-item">
+                                <a href="{{url}}" class="article-list-link article-list-link-section">{{name}}</a>
+                                {{article_count}} artículos
+                            </li>
+                            {{/each}}
+                            {{#if articles}}
                             {{#each articles}}
                             <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
                                 <a href="{{url}}" class="article-list-link">{{title}}</a>
@@ -23,14 +29,14 @@
                                 {{/if}}
                             </li>
                             {{/each}}
+                            {{#if more_articles}}
+                            <a href="{{url}}" class="see-all-articles">
+                                {{t 'show_all_articles' count=article_count}}
+                            </a>
+                            {{/if}}
+                            {{/if}}
                         </ul>
                     </div>
-                    {{#if more_articles}}
-                    <a href="{{url}}" class="see-all-articles">
-                        {{t 'show_all_articles' count=article_count}}
-                    </a>
-                    {{/if}}
-                    {{/if}}
                 </section>
                 {{else}}
                 <i class="category-empty">

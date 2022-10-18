@@ -68,6 +68,11 @@
         a {
             color: $brand-color;
         }
+
+    }
+
+    &-link-section {
+        text-decoration: none !important;
     }
 }
 

@@ -1926,6 +1926,10 @@ ul {
   color: #4D8BCE;
 }
 
+.article-list-link-section {
+  text-decoration: none !important;
+}
+
 .icon-star {
   color: #FF9900;
   font-size: 18px;
@@ -1933,7 +1937,7 @@ ul {
 
 .bg-personaje {
   position: fixed;
-  bottom: 20px;
+  top: 100px;
   right: 10%;
   z-index: -10;
 }
