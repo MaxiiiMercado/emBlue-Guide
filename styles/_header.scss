@@ -13,13 +13,16 @@ $header-height: 90px;
     background-size: cover;
 }
 
+.search-avatar{
+    display: flex;
+    flex-direction: row;
+}
+
 .logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 55%;
     height: 40%;
-
     a {
         display: flex;
         height: 100%;
