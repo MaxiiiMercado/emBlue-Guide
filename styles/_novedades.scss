@@ -1,0 +1,75 @@
+.novedadesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 100px;
+
+    .recent-activity {
+        &-header {
+            text-align: left;
+            font-family: 'Asap';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 37px;
+            color: $main-orange;
+            margin-bottom: 35px;
+            visibility: hidden;
+        }
+
+        &-list {}
+
+        &-item {
+            border-bottom: none;
+
+            &-parent {
+                font-family: 'Asap';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 25px;
+                color: $main-blue;
+                margin-bottom: 20px;
+            }
+
+            &-link {
+                font-family: 'Asap';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21px;
+                /* identical to box height */
+
+                text-decoration-line: underline;
+                margin-bottom: 30px;
+                margin-left: 10px;
+                color: $brand-color;
+            }
+
+            &-meta {}
+
+            &-time {
+                font-family: 'Asap';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+                color: $brand-color;
+            }
+
+            &-comment {
+                display: none;
+            }
+        }
+        &-controls{
+            a{
+                font-family: 'Asap';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+                color: $text-color;
+            }
+        }
+    }
+}
