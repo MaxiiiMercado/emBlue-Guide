@@ -82,7 +82,7 @@
 
         </article>
         <aside class="article-sidebar" aria-labelledby="section-articles-title">
-            <section class="tags-container">
+            <section id='tags-container' class="tags-container">
                 <p>Tipo:<span id="tags-container-tipo"></span></p>
                 <p>Prioridad: <span id="tags-container-prioridad"></span></p>
                 <p>Tag: <span id="tags-container-tag"></span></p>
@@ -125,10 +125,57 @@
 </div>
 
 <script>
-    const tagsElement = document.getElementsByClassName('tags')[0];
-    const array = tagsElement.firstChild.innerHTML.split('-')
-    tagsElement.remove()
-    document.getElementById('tags-container-tipo').innerHTML = array[0].slice(5);
-    document.getElementById('tags-container-prioridad').innerHTML = array[1].slice(11);
-    document.getElementById('tags-container-tag').innerHTML = array[2].slice(5);
+    window.onload = () => {
+        const tagsElement = document.getElementsByClassName('tags')[0];
+        if (tagsElement) {
+            const tagsText = tagsElement.innerText;
+            const tagsArray = tagsText.split('-')
+            tagsElement.remove()
+            document.getElementById('tags-container-tipo').innerHTML = tagsArray[0].slice(5);
+            document.getElementById('tags-container-prioridad').innerHTML = tagsArray[1].slice(11);
+            document.getElementById('tags-container-tag').innerHTML = tagsArray[2].slice(5);
+        }
+        else
+            document.getElementById('tags-container').remove();
+
+        const embluers_table = document.getElementById('embluers-table');
+        if (embluers_table) {
+            const embluers_tr = document.getElementById('embluers').children;
+            const embluers_list = {}
+            for (let i = 1; i < embluers_tr.length; i++) {
+                let embluer_email = embluers_tr[i].firstElementChild.innerText;
+                let embluer_id = embluers_tr[i].lastElementChild.innerText;
+                embluers_list[embluer_email] = embluer_id;
+            }
+            embluers_table.setAttribute('hidden', true);
+
+            const parentElement = document.getElementsByClassName('article-body')[0];
+
+            const embluer_input_search = document.createElement("div");
+            embluer_input_search.classList.add('embluer-search');
+
+            parentElement.insertBefore(embluer_input_search, embluers_table);
+            embluer_input_search.innerHTML = '<div><input id="embluer-input" type="text" placeholder="Ingrese email"/><button id="embluer-search" >Buscar ID</button></div><h4>ID: <span id="result_id"></span></h4><h5 id="show_embluers">Ver listado completo</h5>'
+
+            const botonete = document.getElementById('embluer-search');
+            botonete.onclick = () => {
+                const inputsito = document.getElementById('embluer-input');
+                document.getElementById('result_id').innerHTML = embluers_list[inputsito.value];
+
+            }
+
+            const embluers_list_toggler = document.getElementById('show_embluers');
+
+            embluers_list_toggler.onclick = () => {
+                if (embluers_table.getAttribute('hidden')){
+                    embluers_list_toggler.innerHTML = 'Ocultar listado';
+                    embluers_table.removeAttribute('hidden')
+                }
+                else{
+                    embluers_list_toggler.innerHTML = 'Ver listado completo';
+                    embluers_table.setAttribute('hidden', true)
+                }
+            }
+        }
+    }
 </script>

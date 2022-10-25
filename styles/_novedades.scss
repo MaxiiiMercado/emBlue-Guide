@@ -17,7 +17,6 @@
             visibility: hidden;
         }
 
-        &-list {}
 
         &-item {
             border-bottom: none;
@@ -45,8 +44,6 @@
                 margin-left: 10px;
                 color: $brand-color;
             }
-
-            &-meta {}
 
             &-time {
                 font-family: 'Asap';
