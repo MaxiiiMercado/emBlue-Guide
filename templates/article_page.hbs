@@ -177,5 +177,8 @@
                 }
             }
         }
+
+        const planes = document.getElementsByClassName('planes')[0];
+        planes.innerHTML = '<strong>Disponible para planes</strong> <span>|</span>' + planes.innerHTML.slice(24);
     }
 </script>

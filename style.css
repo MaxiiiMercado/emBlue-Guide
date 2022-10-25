@@ -2299,6 +2299,20 @@ ul {
   color: #4D8BCE;
 }
 
+.article-body .planes {
+  font-size: 14px;
+  color: #4D8BCE;
+}
+
+.article-body .planes span {
+  font-size: 24px;
+  color: #2C4D86;
+}
+
+.article-body .planes strong {
+  color: #2C4D86;
+}
+
 .article-body .embluer-search {
   display: flex;
   justify-content: flex-start;
