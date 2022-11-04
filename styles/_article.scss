@@ -159,8 +159,9 @@
                 }
             }
         }
-        .wysiwyg-color-blue120 {
-            color: $text-color;
+        .wysiwyg-color-blue120,
+        .wysiwyg-color-blue{
+            color: $main-blue;
         }
     }
 

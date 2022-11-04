@@ -1643,7 +1643,7 @@ ul {
 }
 
 .blocks-item:hover, .blocks-item:focus, .blocks-item:active {
-  background-color: #484849;
+  background-color: #1E3F76;
   color: #FFFBFB;
 }
 
@@ -2368,8 +2368,9 @@ ul {
   height: 5px;
 }
 
-.article-body .wysiwyg-color-blue120 {
-  color: #707071;
+.article-body .wysiwyg-color-blue120,
+.article-body .wysiwyg-color-blue {
+  color: #2C4D86;
 }
 
 .article-sidebar {
