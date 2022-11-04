@@ -140,3 +140,16 @@ ul {
 .visibility-hidden {
   @include visually-hidden;
 }
+
+.bg-personaje {
+  position: fixed;
+  bottom: $footer-height;
+  right: 10%;
+  z-index: -10;
+
+  img {
+      width: 269px;
+      height: 516px;
+  }
+
+}

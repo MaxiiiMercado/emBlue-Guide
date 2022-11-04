@@ -1,28 +1,19 @@
 /***** Footer *****/
+
+
 .footer {
-  border-top: 1px solid $border-color;
-  margin-top: 60px;
+  border-top: 1px solid #dddddd30;
+  height: $footer-height;
+  margin-top: 20px;
   padding: 30px 0;
-
-  a {
-    color: $secondary-text-color;
-  }
-
-  &-inner {
-    @include max-width-container;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &-language-selector button {
-    color: $secondary-text-color;
-    display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 200px;
   }
 }
 
 .powered-by-zendesk {
-  a,
-  a:visited {
-    color: $secondary-text-color;
-  }
+  display: none;
 }

@@ -160,18 +160,18 @@
             const botonete = document.getElementById('embluer-search');
             botonete.onclick = () => {
                 const inputsito = document.getElementById('embluer-input');
-                document.getElementById('result_id').innerHTML = embluers_list[inputsito.value];
-
+                const resultEl = document.getElementById('result_id');
+                resultEl.innerHTML = embluers_list[inputsito.value] || 'No se encontró el usuario';
             }
 
             const embluers_list_toggler = document.getElementById('show_embluers');
 
             embluers_list_toggler.onclick = () => {
-                if (embluers_table.getAttribute('hidden')){
+                if (embluers_table.getAttribute('hidden')) {
                     embluers_list_toggler.innerHTML = 'Ocultar listado';
                     embluers_table.removeAttribute('hidden')
                 }
-                else{
+                else {
                     embluers_list_toggler.innerHTML = 'Ver listado completo';
                     embluers_table.setAttribute('hidden', true)
                 }
@@ -179,6 +179,7 @@
         }
 
         const planes = document.getElementsByClassName('planes')[0];
-        planes.innerHTML = '<strong>Disponible para planes</strong> <span>|</span>' + planes.innerHTML.slice(24);
+        if (planes)
+            planes.innerHTML = '<strong>Disponible para planes</strong> <span>|</span>' + planes.innerHTML.slice(24);
     }
 </script>

@@ -347,6 +347,18 @@ ul {
   white-space: nowrap;
 }
 
+.bg-personaje {
+  position: fixed;
+  bottom: 100px;
+  right: 10%;
+  z-index: -10;
+}
+
+.bg-personaje img {
+  width: 269px;
+  height: 516px;
+}
+
 @keyframes animacion-girar {
   0% {
     transform: rotate(0deg);
@@ -1241,38 +1253,21 @@ ul {
 
 /***** Footer *****/
 .footer {
-  border-top: 1px solid #ddd;
-  margin-top: 60px;
+  border-top: 1px solid #dddddd30;
+  height: 100px;
+  margin-top: 20px;
   padding: 30px 0;
-}
-
-.footer a {
-  color: lighten(#707071, 20%);
-}
-
-.footer-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 1160px) {
-  .footer-inner {
-    padding: 0;
-    width: 80%;
-  }
+.footer img {
+  width: 200px;
 }
 
-.footer-language-selector button {
-  color: lighten(#707071, 20%);
-  display: inline-block;
-}
-
-.powered-by-zendesk a,
-.powered-by-zendesk a:visited {
-  color: lighten(#707071, 20%);
+.powered-by-zendesk {
+  display: none;
 }
 
 /***** Breadcrumbs *****/
@@ -2008,18 +2003,6 @@ ul {
   font-size: 18px;
 }
 
-.bg-personaje {
-  position: fixed;
-  top: 100px;
-  right: 10%;
-  z-index: -10;
-}
-
-.bg-personaje img {
-  width: 269px;
-  height: 516px;
-}
-
 /***** Section pages *****/
 .section-container {
   display: flex;
@@ -2370,12 +2353,22 @@ ul {
 }
 
 .article-body .embluer-search h5 {
+  display: contents;
   color: #4D8BCE;
   text-decoration: underline;
 }
 
 .article-body .embluer-search h5:hover, .article-body .embluer-search h5:active {
   cursor: pointer;
+}
+
+.article-body .embluer-search .copiarID svg {
+  width: 5px;
+  height: 5px;
+}
+
+.article-body .wysiwyg-color-blue120 {
+  color: #707071;
 }
 
 .article-sidebar {

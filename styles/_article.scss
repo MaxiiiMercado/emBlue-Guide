@@ -144,12 +144,23 @@
             }
 
             h5{
+                display: contents;
                 color: $brand-color;
                 text-decoration: underline;
                 &:hover, &:active{
                     cursor: pointer;
                 }
             }
+
+            .copiarID{
+                svg{
+                    width: 5px;
+                    height: 5px;
+                }
+            }
+        }
+        .wysiwyg-color-blue120 {
+            color: $text-color;
         }
     }
 
