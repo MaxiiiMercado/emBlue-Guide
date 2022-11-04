@@ -9,6 +9,10 @@
     &-link {
       @extend .button;
     }
+
+    &-text{
+      color: $brand_color;
+    }
   }
 
   &-first, &-last {
@@ -18,6 +22,7 @@
 
     &-text {
      @include visually-hidden;
+     color: $brand_color;
     }
   }
 
@@ -27,6 +32,10 @@
     }
     &-text {
       margin-right: 10px;
+      color: $brand_color;
+    }
+    &-icon{
+      color: $brand_color;
     }
     [dir="rtl"] & {
       &-link {
@@ -36,6 +45,33 @@
         margin-left: 10px;
       }
     }
+    &:hover &-text, &:hover &-icon{
+      color: $text-white;
+    }
+  }
+
+  &-last {
+    &-link {
+      padding-right: 10px;
+    }
+    &-text {
+      margin-right: 10px;
+      color: $brand_color;
+    }
+    &-icon{
+      color: $brand_color;
+    }
+    [dir="rtl"] & {
+      &-link {
+        padding-left: 10px;
+      }
+      &-text {
+        margin-left: 10px;
+      }
+    }
+    &:hover &-text, &:hover &-icon{
+      color: $text-white;
+    }
   }
 
   &-prev {
@@ -44,6 +80,10 @@
     }
     &-text {
       margin-left: 10px;
+      color: $brand_color;
+    }
+    &-icon{
+      color: $brand_color;
     }
     [dir="rtl"] & {
       &-link {
@@ -52,6 +92,33 @@
       &-text {
         margin-right: 10px;
       }
+    }
+    &:hover &-text, &:hover &-icon{
+      color: $text-white;
+    }
+  }
+
+  &-first {
+    &-link {
+      padding-left: 10px;
+    }
+    &-text {
+      margin-left: 10px;
+      color: $brand_color;
+    }
+    &-icon{
+      color: $brand_color;
+    }
+    [dir="rtl"] & {
+      &-link {
+        padding-right: 10px;
+      }
+      &-text {
+        margin-right: 10px;
+      }
+    }
+    &:hover &-text, &:hover &-icon{
+      color: $text-white;
     }
   }
 }

@@ -1,17 +1,10 @@
-<div class="container-divider"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
-    <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search submit=false}}
-    </div>
   </nav>
 
   <div class="search-results">
+    {{!--
     <aside class="search-results-sidebar">
       {{#if source_filters}}
         <section class="filters-in-section collapsible-sidebar" aria-expanded="false">
@@ -107,7 +100,7 @@
         </section>
       {{/if}}
     </aside>
-
+    --}}
     <section id="main-content" class="search-results-column">
       <h1 class="search-results-subheading">
         {{#is current_filter.identifier 'unified'}}
@@ -135,6 +128,7 @@
                   {{/if}}
                 </a>
               </h2>
+              {{!--
               <div class="search-result-icons">
                 {{#if vote_sum}}
                   <span class="search-result-votes">
@@ -166,6 +160,7 @@
                   </span>
                 {{/if}}
               </div>
+              --}}
               <article>
                 <ul class="meta-group">
                   <li>
@@ -175,9 +170,6 @@
                       {{/each}}
                     </ol>
                   </li>
-                  {{#unless is_external}}
-                    <li class="meta-data">{{author.name}}</li>
-                  {{/unless}}
                   <li class="meta-data">{{date created_at}}</li>
                 </ul>
                 <div class="search-results-description">{{text}}</div>

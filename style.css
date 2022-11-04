@@ -595,8 +595,9 @@ ul {
   color: #4D8BCE;
   cursor: pointer;
   display: inline-block;
-  font-size: 12px;
-  line-height: 2.34;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 500;
   margin: 0;
   padding: 0 20px;
   text-align: center;
@@ -615,7 +616,7 @@ ul {
 
 .button:visited, .split-button button:visited, .section-subscribe button:visited, .community-follow button:visited, .requests-table-toolbar .organization-subscribe button:visited, .subscriptions-subscribe button:visited, .pagination-next-link:visited, .pagination-prev-link:visited, .pagination-first-link:visited, .pagination-last-link:visited, .button:hover, .split-button button:hover, .section-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover, .button:active, .split-button button:active, .section-subscribe button:active, .community-follow button:active, .requests-table-toolbar .organization-subscribe button:active, .subscriptions-subscribe button:active, .pagination-next-link:active, .pagination-prev-link:active, .pagination-first-link:active, .pagination-last-link:active, .button:focus, .split-button button:focus, .section-subscribe button:focus, .community-follow button:focus, .requests-table-toolbar .organization-subscribe button:focus, .subscriptions-subscribe button:focus, .pagination-next-link:focus, .pagination-prev-link:focus, .pagination-first-link:focus, .pagination-last-link:focus, .button.button-primary, .split-button button.button-primary, .section-subscribe button.button-primary, .section-subscribe button[data-selected="true"], .community-follow button.button-primary, .requests-table-toolbar .organization-subscribe button.button-primary, .requests-table-toolbar .organization-subscribe button[data-selected="true"], .subscriptions-subscribe button.button-primary, .subscriptions-subscribe button[data-selected="true"], .button-primary.pagination-next-link, .button-primary.pagination-prev-link, .button-primary.pagination-first-link, .button-primary.pagination-last-link {
   background-color: #4D8BCE;
-  color: $brand_text_color;
+  color: #FFFBFB;
   text-decoration: none;
 }
 
@@ -656,13 +657,13 @@ ul {
 }
 
 .button-secondary {
-  color: lighten(#707071, 20%);
+  color: #4D8BCE;
   border: 1px solid #ddd;
   background-color: transparent;
 }
 
 .button-secondary:hover, .button-secondary:focus, .button-secondary:active {
-  color: #707071;
+  color: #4D8BCE;
   border: 1px solid #ddd;
   background-color: darken($background_color, 3%);
 }
@@ -4198,6 +4199,10 @@ ul {
   display: inline-block;
 }
 
+.pagination-next-text, .pagination-prev-text, .pagination-first-text, .pagination-last-text {
+  color: #4D8BCE;
+}
+
 .pagination-first-link, .pagination-last-link {
   padding: 0 10px;
 }
@@ -4214,6 +4219,7 @@ ul {
   position: absolute;
   width: 1px;
   white-space: nowrap;
+  color: #4D8BCE;
 }
 
 .pagination-next-link {
@@ -4222,6 +4228,11 @@ ul {
 
 .pagination-next-text {
   margin-right: 10px;
+  color: #4D8BCE;
+}
+
+.pagination-next-icon {
+  color: #4D8BCE;
 }
 
 [dir="rtl"] .pagination-next-link {
@@ -4232,12 +4243,46 @@ ul {
   margin-left: 10px;
 }
 
+.pagination-next:hover .pagination-next-text, .pagination-next:hover .pagination-next-icon {
+  color: #FFFBFB;
+}
+
+.pagination-last-link {
+  padding-right: 10px;
+}
+
+.pagination-last-text {
+  margin-right: 10px;
+  color: #4D8BCE;
+}
+
+.pagination-last-icon {
+  color: #4D8BCE;
+}
+
+[dir="rtl"] .pagination-last-link {
+  padding-left: 10px;
+}
+
+[dir="rtl"] .pagination-last-text {
+  margin-left: 10px;
+}
+
+.pagination-last:hover .pagination-last-text, .pagination-last:hover .pagination-last-icon {
+  color: #FFFBFB;
+}
+
 .pagination-prev-link {
   padding-left: 10px;
 }
 
 .pagination-prev-text {
   margin-left: 10px;
+  color: #4D8BCE;
+}
+
+.pagination-prev-icon {
+  color: #4D8BCE;
 }
 
 [dir="rtl"] .pagination-prev-link {
@@ -4246,6 +4291,35 @@ ul {
 
 [dir="rtl"] .pagination-prev-text {
   margin-right: 10px;
+}
+
+.pagination-prev:hover .pagination-prev-text, .pagination-prev:hover .pagination-prev-icon {
+  color: #FFFBFB;
+}
+
+.pagination-first-link {
+  padding-left: 10px;
+}
+
+.pagination-first-text {
+  margin-left: 10px;
+  color: #4D8BCE;
+}
+
+.pagination-first-icon {
+  color: #4D8BCE;
+}
+
+[dir="rtl"] .pagination-first-link {
+  padding-right: 10px;
+}
+
+[dir="rtl"] .pagination-first-text {
+  margin-right: 10px;
+}
+
+.pagination-first:hover .pagination-first-text, .pagination-first:hover .pagination-first-icon {
+  color: #FFFBFB;
 }
 
 /***** Metadata *****/
@@ -4933,7 +5007,7 @@ ul {
 
 @media (min-width: 1024px) {
   .search-results-column {
-    flex: 0 0 75%;
+    flex: 0 0 100%;
   }
 }
 
@@ -5013,8 +5087,10 @@ ul {
 }
 
 .search-results-subheading {
-  font-size: 18px;
   font-weight: 600;
+  font-size: 22px;
+  line-height: 25px;
+  color: #2C4D86;
 }
 
 .search-results-list {
@@ -5084,8 +5160,11 @@ ul {
 }
 
 .search-result-title {
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
   display: inline-block;
+  text-decoration: underline;
 }
 
 [dir="ltr"] .search-result-icons {
